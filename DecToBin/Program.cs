@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,9 @@ namespace DecToBin
             var uTempVal = uNumber;
             while (uTempVal > 0)
             {
-                strBinNum = (uTempVal % 2) + strBinNum;
+                uint nBinDigit = uTempVal % 2;
+                char chBinDigit = (char)(nBinDigit + '0');
+                strBinNum = chBinDigit + strBinNum;
                 uTempVal /= 2;
             }
             if (strBinNum.Length == 0)
